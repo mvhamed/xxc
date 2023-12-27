@@ -27,7 +27,7 @@ async def skip(cli, message: Message, _, chat_id):
         loop = await get_loop(chat_id)
         if loop != 0:
             return await message.reply_text(_["admin_8"])
-        user_mention = message.from_user.mention if message.from_user.mention else "المشـرف"
+        user_mention = message.from_user.mention if message.from_user else "المشـرف"
         state = message.text.split(None, 1)[1].strip()
         if state.isnumeric():
             state = int(state)
@@ -97,7 +97,7 @@ async def skip(cli, message: Message, _, chat_id):
                 return
     queued = check[0]["file"]
     title = (check[0]["title"]).title()
-    user = check[0]["by"] if check[0]["by"] else "المشـرف"
+    user = check[0]["by"] if check[0] else "المشـرف"
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
     status = True if str(streamtype) == "video" else None
