@@ -20,7 +20,7 @@ async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
-    user_mention = message.from_user.mention if message.from_user.mention else "المشـرف"
+    user_mention = message.from_user.mention if message.from_user else "المشـرف"
     await Zelzaly.resume_stream(chat_id)
     await message.reply_text(
         _["admin_4"].format(user_mention), reply_markup=close_markup(_)
