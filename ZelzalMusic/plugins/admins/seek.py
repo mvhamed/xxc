@@ -69,7 +69,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
         )
     except:
         return await mystic.edit_text(_["admin_26"], reply_markup=close_markup(_))
-    user_mention = message.from_user.mention if message.from_user.mention else "المشـرف"
+    user_mention = message.from_user.mention if message.from_user else "المشـرف"
     if message.command[0][-2] == "c":
         db[chat_id][0]["played"] -= duration_to_skip
     else:
