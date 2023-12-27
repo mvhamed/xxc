@@ -20,7 +20,7 @@ async def admins(cli, message: Message, _, chat_id):
     if len(message.command) != 2:
         return await message.reply_text(usage)
     state = message.text.split(None, 1)[1].strip()
-    user_mention = message.from_user.mention if message.from_user.mention else "المشـرف"
+    user_mention = message.from_user.mention if message.from_user else "المشـرف"
     if state.isnumeric():
         state = int(state)
         if 1 <= state <= 10:
