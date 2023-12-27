@@ -93,7 +93,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     except:
         pass
-    user_mention = CallbackQuery.from_user.mention if CallbackQuery.from_user.mention else "المشـرف"
+    user_mention = CallbackQuery.from_user.mention if CallbackQuery.from_user else "المشـرف"
     mystic = await CallbackQuery.edit_message_text(
         text=_["admin_32"].format(user_mention),
     )
