@@ -1,11 +1,11 @@
 from pyrogram import filters, Client
-from AnonX import app
+from ZelzalMusic import app
 import asyncio
 from pyrogram.types import VideoChatEnded, Message
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from AnonX.core.call import Anon
-from AnonX.utils.database import *
+from ZelzalMusic.core.call import Anon
+from ZelzalMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 
 @app.on_message(filters.regex("^مين في الكول$"))
