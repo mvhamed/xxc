@@ -4,7 +4,7 @@ import asyncio
 from pyrogram.types import VideoChatEnded, Message
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from ZelzalMusic.core.call import Anon
+from ZelzalMusic.core.call import ZelzalMusic
 from ZelzalMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 
@@ -12,7 +12,7 @@ from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJ
 async def strcall(client, message):
     assistant = await group_assistant(Anon,message.chat.id)
     try:
-        await assistant.join_group_call(message.chat.id, AudioPiped("./AnonX/assets/call.mp3"), stream_type=StreamType().pulse_stream)
+        await assistant.join_group_call(message.chat.id, AudioPiped("./ZelzalMusic/assets/call.mp3"), stream_type=StreamType().pulse_stream)
         text="الناس الموجودين ف الكول:\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k =0
